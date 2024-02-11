@@ -12,16 +12,18 @@ const Tecnologias=({tecnolog}: {tecnolog: string[]})=>{
       };
       let estilosTry={
         display: "grid",
+        border: "2px solid rgb(125 58 225)",
         gridTemplateColumns: "repeat(4, 1fr)",
-        border:"dotted",
-        padding: "1.5px",
+        padding: "5px",
         width:"fit-content",
         willChange: "filter",
-        boxShadow: "rgba(0, 0, 0, 0.1) 0px 2px 4px",
+        boxShadow: "rgba(87, 29, 169, 1) 1px 5px 10px",
         transition: "filter 100ms",
         TextAlign:"center",
+        gap: "10px",
+        minWidth:"250px",
         margin:"auto",
-        borderRadius:"2px",
+        borderRadius:"20px",
         filter: hovered
           ? "drop-shadow(0 0 2em #310D87)"
           : "drop-shadow(0 1px 2em #F9468A)",
@@ -35,17 +37,14 @@ return(<div>
         Tecnologias
       </h1>
       <br/>
-      <div style={{visibility:"hidden"}}>
-<ul>
-    {tecnolog.map((u,i)=><li key={i+"u"}>{u}</li>)}
-</ul>
-</div>
+      <br/>
+      <br/>
 <div style={estilosTry}onMouseEnter={() => setHovered(true)}
  onMouseLeave={() => setHovered(false)}>
     {tecnolog.map((u,i)=><div 
  >
     <h2 key={i+"u"}>{u}</h2>
-    <a>as</a>
+   
     </div>)}
     </div>
     </section>

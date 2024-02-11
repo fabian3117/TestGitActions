@@ -1,20 +1,29 @@
 import React, { useState } from "react";
 import github from './assets/github.svg';
-import './App.css'
+import './App.css';
+import "./abourMe.css";
+import './TextoAnimado.css'; // Asegúrate de importar tu archivo CSS o define las reglas en línea aquí
 
 const AboutMe = () => {
   const [hovered, setHovered] = useState(false);
+  const [texto, setTexto] = useState("Tu texto aquí");
 
   let estilos = {
-    marginTop: "120px",
-    height: "6px",
-    padding: "1.5px",
     willChange: "filter",
     transition: "filter 300ms",
     filter: hovered
       ? "drop-shadow(0 0 1em #7E228A)"
       : "drop-shadow(0 0 1em #0B80A3)",
   };
+  const EstiloPrincipalLetras={
+      fontSize: "4em",
+      willChange: "filter",
+      transition: "filter 300ms",
+      filter: hovered
+      ? "drop-shadow(0 0 0.5em #7E228A)"
+      : "drop-shadow(0 0 0.5em #0B80A3)",  
+      animation: "aparecer 5s forwards"
+  }
   const EstiloLetras = {
     fontFamily: 'Arial, sans-serif',
    // color: '#333', // Cambia el color del texto según tus preferencias
@@ -26,17 +35,25 @@ const AboutMe = () => {
     border: '1px solid #ddd', // Agrega un borde para resaltar el contenido
     borderRadius: '8px', // Añade bordes redondeados
     boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', // Agrega una sombra sutil
+    animation: 'fadeIn 1s ease-in-out', 
+  };
+  let estiloPadre={
+    display: "inline"
+  };
+  let estiloHijo={
+    display:"inline"
   };
   return (
     <React.Fragment>
-        <div >
+      <div style={estiloPadre}>
+        <div style={estiloHijo}>
         <section id="sobre-mi">
-            <div style={{display:"flex"}}>
+            <div >
         <a href="https://github.com/fabian3117" target="_blank">
           <img src={github} className="logo react" alt="React logo" />
         </a>
       <h1
-        style={estilos}
+        style={EstiloPrincipalLetras}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}>
         Federico Nahuel Fabian Gonzalez
@@ -76,6 +93,7 @@ const AboutMe = () => {
     </div>
  </section>
  
+      </div>
       </div>
     </React.Fragment>
   );

@@ -1,0 +1,12 @@
+/* TextoAnimado.css */
+.letra {
+    opacity: 0;
+    animation: aparecer 5s forwards;
+  }
+  
+  @keyframes aparecer {
+    to {
+      opacity: 1;
+    }
+  }
+  

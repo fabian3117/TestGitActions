@@ -1,0 +1,19 @@
+/* En tu archivo de estilos o en línea */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+.EstiloPrincipalLetras{
+    font-size: 2em;
+    will-change: filter;
+    transition: filter 300ms;
+    filter: drop-shadow(0 0 1em #7E228A);
+
+    &:hover{
+        filter: drop-shadow(0 0 1em #0B80A3),
+    }
+}  
